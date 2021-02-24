@@ -3,14 +3,14 @@ public class Singleton<E> {
     private Stack datos; //se guarda el stack
 
 
-    private void Singleton(){
+    private void Singleton(String entry){
         StackFactory StFc = new StackFactory();
-        datos = StFc.getStack("SL"); //Aqui se pone que tipo de Stack se Quiere
+        datos = StFc.getStack(entry); //Aqui se pone que tipo de Stack se Quiere
     }
 
-    public Stack getStack(){
+    public Stack getStack(String entry){
         if(datos==null){
-            Singleton();
+            Singleton(entry);
         }
 
         return datos;

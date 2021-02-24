@@ -1,9 +1,10 @@
 public class CalculadoraJessJac implements CalculadoraGeneral {
     Stack<Integer> vec;
 
-    public CalculadoraJessJac() {
+
+    public CalculadoraJessJac(String StackTipe) {
         Singleton sg = new Singleton();
-        vec = sg.getStack();
+        vec = sg.getStack(StackTipe);
     }
 
     /**

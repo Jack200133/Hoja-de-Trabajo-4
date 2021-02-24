@@ -1,4 +1,10 @@
 public class Infix {
+    String StackTipe;
+
+    public Infix(String StackTipe) {
+        this.StackTipe = StackTipe;
+    }
+
     public int jerarquia(char ch)
     {
         switch (ch)
@@ -22,7 +28,7 @@ public class Infix {
         StringBuilder result = new StringBuilder();
         Singleton sg = new Singleton();
         // stack vacio
-        Stack<Character> stack = sg.getStack();
+        Stack<Character> stack = sg.getStack(StackTipe);
 
         for (int i = 0; i<exp.length(); ++i)
         {
