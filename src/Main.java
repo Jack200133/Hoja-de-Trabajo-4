@@ -6,5 +6,6 @@ public class Main {
         Infix in = new Infix();
         String exp = "a+b*(c^d-e)^(f+g*h)-i";
         System.out.println(in.infixToPostfix(exp));
+
     }
 }
