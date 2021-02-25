@@ -53,7 +53,5 @@ public class StackList<E> extends  AbstractStack<E>{
     public int size() {
         return stackTop;
     }
-    public boolean isFull() {
-        return stackTop + 1 == data.length;
-    }
+
 }

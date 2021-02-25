@@ -3,15 +3,16 @@ public class StackFactory<E> {
     //se utiliza el patron factory
 
     public Stack<E> getStack(String entry) {
-        if (entry.equals("SL")) {
-            return new StackList(); //regresa un List
-        } else if(entry.equals("SLD")){
-            return new StackDoubleList<>(); //regresa una Lista doble
-        } else if (entry.equals("SAL")) {
-            return new StackArrayList<E>();//regresa un ArrayList
-        } else {
-            return new StackVector<E>(); //regresa Vector
-        }
+        return switch (entry) {
+//regresa un List
+            case "SL" -> new StackList();
+//regresa una Lista doble
+            case "SLD" -> new StackDoubleList<>();
+//regresa un ArrayList
+            case "SAL" -> new StackArrayList<E>();
+//regresa Vector
+            default -> new StackVector<E>();
+        };
     }
 }
 

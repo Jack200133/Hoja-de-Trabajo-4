@@ -1,34 +1,26 @@
 public class Infix {
-    String StackTipe;
+    Stack StackTipe;
 
-    public Infix(String StackTipe) {
+    public Infix(Stack StackTipe) {
         this.StackTipe = StackTipe;
     }
 
     public int jerarquia(char ch)
     {
-        switch (ch)
-        {
-            case '+':
-            case '-':
-                return 1;
-
-            case '*':
-            case '/':
-                return 2;
-
-            case '^':
-                return 3;
-        }
-        return -1;
+        return switch (ch) {
+            case '+', '-' -> 1;
+            case '*', '/' -> 2;
+            case '^' -> 3;
+            default -> -1;
+        };
     }
 
     public String infixToPostfix(String exp)
     {
         StringBuilder result = new StringBuilder();
-        Singleton sg = new Singleton();
+
         // stack vacio
-        Stack<Character> stack = sg.getStack(StackTipe);
+        Stack<Character> stack = StackTipe;
 
         for (int i = 0; i<exp.length(); ++i)
         {
