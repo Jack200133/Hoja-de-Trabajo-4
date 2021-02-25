@@ -1,40 +1,58 @@
+/**
+ * @author Juan Angel Carrera
+ *  @author Jessica Pamela Ortiz
+ *  @version 24/02/2021
+ *  @since 23/02/2021
+ *  @param <E> parametro para que el dato sea generico
+ *
+ *  Implementacion de un stack por medio de un ArrayList
+ */
+
 import java.util.ArrayList;
 
 public class StackArrayList<E> extends AbstractStack<E>{
 
     protected ArrayList<E> data;
 
+    /**
+     * @post: constructor de un nuevo stack
+     */
     public StackArrayList()
-    //post: constructor de un stack nuevo
     {
         data = new ArrayList<E>();
     }
 
-    /** Agrega un item al stack y sera eliminado en un pop si no se agrega otro item
-     * @param item*/
+    /**
+     * @post: agrega un item al final del stack
+     * @param item item que sera agregado
+     */
     @Override
     public void push(E item) {
         data.add(item);
     }
 
     /**
-     * pre: El stack no puede estar vacio
-     * post: elimina el ultimo item y lo devuelove
+     * @pre: Stack no puede estar vacio
+     * @post: elimina el ultimo item
+     * @return el utlimo item que es eliminado
      */
     @Override
     public E pop() {
         return data.remove(size()-1);
     }
 
-    /** pre: El stack no puede estar vacio
-     * post: muestra el valor proximo a ser eliminado*/
+    /**
+     * @pre: El stacn no puede estar vacio
+     * @post: muestra el valor porximo a ser eliminado
+     * @return regresa el valor mas recientemente agregado
+     */
     @Override
     public E peek() {
         return data.get(size()-1);
     }
 
     /**
-     * Devuelve el tamaño del stack
+     * @return el tamaño del stack
      */
     @Override
     public int size() {

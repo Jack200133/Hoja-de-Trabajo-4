@@ -1,3 +1,11 @@
+/**
+ * @autor Juan Angel Carrera
+ * @autor Jessica Pamela Ortiz
+ * @version 24/02/2021
+ * @since 23/02/2021
+ *
+ * Main que le pedira al usaurio quye tipo de stack y la oprecion
+ */
 import java.util.Scanner;
 
 public class Main {
@@ -38,7 +46,7 @@ public class Main {
             System.out.println("El dato ingresado es: " +pr);
             post = in.infixToPostfix(pr);
 
-            System.out.println("La respuesta es: "+ SingletonCalcu.getCalcu(Singleton.getStack(res)).Calculo(post));
+            System.out.println("La respuesta es: "+ SingletonCalcu.getCalcu(res).Calculo(post));
         }else {
             System.out.println("No se ingreso Ningun dato");
         }

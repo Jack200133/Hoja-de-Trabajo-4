@@ -1,6 +1,18 @@
+/**
+ * @author Juan Angel Carrera
+ * @author Jessica Pamela Ortiz
+ * @version 24/02/2021
+ * @since 23/02/2021
+ *
+ * Implementacion de un traductor de infix a postfix
+ */
+
 public class Infix {
     Stack StackTipe;
 
+    /**
+     * @param StackTipe es el tipo de stack que usara el infix
+     */
     public Infix(Stack StackTipe) {
         this.StackTipe = StackTipe;
     }

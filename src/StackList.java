@@ -1,57 +1,83 @@
+/**
+ * @author Juan Angel Carrera
+ *  @author Jessica Pamela Ortiz
+ *  @version 24/02/2021
+ *  @since 23/02/2021
+ *  @param <E> parametro para que el dato sea generico
+ *
+ *  Implementacion de un stack por medio de una lista simplemente ecadenada
+ */
 public class StackList<E> extends  AbstractStack<E>{
 
-    static int capacity = 1000;
-    private int stackTop;
-    protected E data[];
+    Node top;
+    int size;
 
+    /**
+     * @post: constructor de un nuevo stack
+     */
     public StackList()
-    //post: constructor de un stack nuevo
     {
-        data = (E[])new Object[capacity];
-        stackTop = 0;
+        this.top = null;
+        size =0 ;
     }
     /**
-     * Agrega un item al stack y sera eliminado en un pop si no se agrega otro item
-     *
+     * @post: agrega un item al final del stack
+     * @param item item que sera agregado
      */
     @Override
     public void push(E item) {
-        if(stackTop+1 == data.length){
-            System.out.println("Stack esta lleno no puedes meter mas datos");
-        }
-        else{
-            data[++stackTop] = item;
-        }
 
+        // initialize data into temp data field
+        // put top reference into temp link
+        Node temp = new Node(item,top);
+
+        // update top reference
+        top = temp;
+        this.size++;
     }
 
     /**
-     * pre: El stack no puede estar vacio
-     * post: elimina el ultimo item y lo devuelove
+     * @pre: Stack no puede estar vacio
+     * @post: elimina el ultimo item
+     * @return el utlimo item que es eliminado
      */
     @Override
     public E pop() {
-        E poped = data[stackTop];
-        data[stackTop] = null; //Just make it 0(1)
-        stackTop--;
-        return poped;
+        if (top == null) {
+            System.out.print("\nStack vacio");
+        }
+
+        // update the top pointer to point to the next node
+        E temp = (E) top.data;
+        top = (top).next;
+        size--;
+        return temp;
     }
 
     /**
-     * pre: El stack no puede estar vacio
-     * post: muestra el valor proximo a ser eliminado
+     * @pre: El stacn no puede estar vacio
+     * @post: muestra el valor porximo a ser eliminado
+     * @return regresa el valor mas recientemente agregado
      */
     @Override
     public E peek() {
-        return data[stackTop];
+        E temp = null;
+        // check for empty stack
+        if (empty()) {
+            System.out.println("Stack esta vacio");
+        }
+        else {
+            temp= (E) top.data;
+        }
+        return temp;
     }
 
     /**
-     * Devuelve el tamaño del stack
+     * @return el tamaño del stack
      */
     @Override
     public int size() {
-        return stackTop;
+        return this.size;
     }
 
 }

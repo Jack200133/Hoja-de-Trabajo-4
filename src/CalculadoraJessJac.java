@@ -1,15 +1,27 @@
+/**
+ * @author Juan Angel Carrera
+ * @author Jessica Pamela Ortiz
+ * @version 24/02/2021
+ * @since 23/02/2021
+ *
+ * Implementacion de una calculadora usando postfix
+ * */
 public class CalculadoraJessJac implements CalculadoraGeneral {
 
     private Stack<Integer> vec;
 
-
-    public CalculadoraJessJac(Stack StackTipe) {
-        vec = StackTipe;
+    /**
+     * @post:  inicialista la clase calculadora
+     * @param StackTipe parametro que le da el tipo de stack
+     * */
+    public CalculadoraJessJac(String StackTipe) {
+        vec = Singleton.getStack(StackTipe);
     }
 
     /**
-     * Metodo donde la calculadora llamara al stack para almacenar y hacer los calculos
-     *
+     * @post: crea un resultado de la operacion que es enviada
+     * @param texto es la operacion que sera operada
+     * @return regresa el resultado de la operacion o si la operacion es invalida
      */
     @Override
     public String Calculo(String texto) {

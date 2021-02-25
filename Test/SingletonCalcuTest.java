@@ -6,7 +6,7 @@ class SingletonCalcuTest {
 
     @Test
     void getCalcu() {
-        CalculadoraGeneral fe = SingletonCalcu.getCalcu(Singleton.getStack(""));
+        CalculadoraGeneral fe = SingletonCalcu.getCalcu("");
         String res = fe.Calculo("36+");
         assertEquals("9",res);
     }
