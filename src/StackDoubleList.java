@@ -45,7 +45,7 @@ public class StackDoubleList<E> extends AbstractStack<E>  {
     public E pop() {
         E temp = null;
         if (this.empty()) {
-            System.out.println("İs Empty");
+            System.out.println("Stack esta vacio");
         } else {
             --this.size;
             temp = (E) this.head.data;
@@ -63,7 +63,7 @@ public class StackDoubleList<E> extends AbstractStack<E>  {
     public E peek() {
         E temp = null;
         if (this.empty()) {
-            System.out.println("İs Empty");
+            System.out.println("Stack esta vacio");
         } else {
             temp = (E) this.head.data;
         }

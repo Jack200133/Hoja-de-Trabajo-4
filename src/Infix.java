@@ -13,8 +13,8 @@ public class Infix {
     /**
      * @param StackTipe es el tipo de stack que usara el infix
      */
-    public Infix(Stack StackTipe) {
-        this.StackTipe = StackTipe;
+    public Infix(String StackTipe) {
+        this.StackTipe = Singleton.getStack(StackTipe);
     }
 
     public int jerarquia(char ch)

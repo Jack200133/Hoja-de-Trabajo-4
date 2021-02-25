@@ -23,18 +23,17 @@ public class Main {
         String res;
 
         if(op ==1){
-            res = "SL";
-        }else if(op ==2){
-            res = "SLD";
-        }else if(op ==3){
-            res = "SAL";
-        }else{
-            res = "";
+                res = "SL";
+            }else if(op ==2){
+                res = "SLD";
+            }else if(op ==3){
+                res = "SAL";
+            }else{
+                res = "";
         }
 
 
-        Infix in = new Infix(Singleton.getStack(res));
-
+        Infix in = new Infix(res);
 
         System.out.println("----------------------------------------");
         scan.nextLine();

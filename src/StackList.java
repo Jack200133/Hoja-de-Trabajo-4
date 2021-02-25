@@ -44,7 +44,7 @@ public class StackList<E> extends  AbstractStack<E>{
     @Override
     public E pop() {
         if (top == null) {
-            System.out.print("\nStack vacio");
+            System.out.print("\nStack esta vacio");
         }
 
         // update the top pointer to point to the next node
